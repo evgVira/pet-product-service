@@ -12,9 +12,19 @@ spring:
         format_sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     database: postgresql
+  kafka:
+    producer:
+      client-id: "product-service-producer"
+
 server:
   port: 8081
 
 product:
   discount:
     status: false
+application:
+  kafka:
+    topic: supplier-request-event
+
+broker:
+  bootstrap-servers: localhost:9092
